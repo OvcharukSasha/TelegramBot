@@ -21,11 +21,11 @@ public class Weather {
     public static String getWeather(String message, Model model) throws IOException {
 
         URL url = new URL("http://api.openweathermap.org/data/2.5/weather?q=" + message + "&units=metric&appid=b14faadebbd3c6e6919497439bf916e9");
-
+//bgfg
         Scanner in = new Scanner((InputStream) url.getContent());
         String result = "";
         while (in.hasNext()) {
-            result += in.nextLine();
+            result +=   in.nextLine();
         }
         JSONObject object = new JSONObject(result);
         model.setName(object.getString("name"));
